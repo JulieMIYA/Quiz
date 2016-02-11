@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Welcome to test!
+{% endblock %}
+
+{% block body %}
+    <div id="wrapper">
+        <div id="container">
+            <h1>QUIZ</h1>
+            <h2>{{ question['content'] }} </h2>
+            <ul class="optionLs">
+                {% for key,value  in question['choices'] %}
+                    <li>
+                        <input type="checkbox">{{ key }}: {{ value }}</input>
+                    </li>
+                {% endfor %}
+
+            </ul>
+
+            {% if isEnd %}
+                <button>Opps! C'est la fin.</button>
+            {% else  %}
+                <a href="/questions/{{ index+1 }}"><button>Suivant</button></a>
+            {% endif %}
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block stylesheets %}
+    <style>
+        body {
+            display: block;
+            margin: 0px;
+            height:100vh;
+        }
+        #wrapper {
+            background:linear-gradient(to bottom right,#D0E6F3,#FBFBFB, #F7F4E5);
+            margin: 1em auto;
+            max-width: 800px;
+            width: 95%;
+            height:100%;
+        }
+        #container {
+            padding:2em;
+
+        }
+        #container h1{
+            text-align: center;
+        }
+        .optionLs {  list-style-type: none;}
+
+        button{ }
+    </style>
+
+
+
+{% endblock %}
