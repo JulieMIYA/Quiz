@@ -4,7 +4,7 @@ NCtest
 
 # Quiz
 executing this command:
-$ php bin/console server:run
+>$ php bin/console server:run
 
 Then, open your browser and access the **http://localhost:8000/questions**
 
